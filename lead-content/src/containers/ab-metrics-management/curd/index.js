@@ -33,7 +33,6 @@ const formItemLayout = {
     sm: { span: 3 },
   },
 };
-@Form.create()
 class curd extends React.Component {
   constructor(prop) {
     super(prop);
@@ -918,4 +917,4 @@ class curd extends React.Component {
     );
   }
 }
-export default curd;
+export default  Form.create()(curd);

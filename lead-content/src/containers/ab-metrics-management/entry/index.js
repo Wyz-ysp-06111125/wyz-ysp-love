@@ -137,7 +137,6 @@ class Entry extends React.Component {
                             style={{ marginRight: 10 }}
                         >编辑关联角色</a> */}
               <a
-                // eslint-disable-next-line no-script-url
                 href='javascript:;'
                 rel='noreferrer noopener'
                 onClick={() => {
@@ -150,7 +149,6 @@ class Entry extends React.Component {
                 编辑
               </a>
               <a
-                // eslint-disable-next-line no-script-url
                 href='javascript:;'
                 rel='noreferrer noopener'
                 onClick={() => {

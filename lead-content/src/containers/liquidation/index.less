@@ -1,0 +1,69 @@
+.liquidation .page-template .ant-form-inline .ant-form-item .ant-form-item-label{
+    width:98px;
+}
+.liquidation.search-form .ant-form-item .ant-form-item-label{
+    width:113px;
+}
+.liquidation {
+    .ant-table-row.overdue{
+        color: red;
+    }
+}
+.liquidation .liquid-rule-cell{
+    margin-top: 10px;
+}
+.search-form .ant-form-item.liquidation-formItem-advanceInput{
+    margin-bottom: 0px!important;
+}
+.search-form.liquidation .liquidation-cashier .ant-form-item{
+    margin-right: 0px!important; 
+    margin-bottom: 0px!important;
+}
+.liquid-rule-cell{
+    position: relative;
+    &.dashed{
+        border-bottom: 1px dashed #d9d9d9;
+        
+        .liquidation-formItem-advanceInputGroup{
+            .has-success{
+                &>.ant-form-item-children >div{
+                    border: 1px dashed transparent;
+                }
+            }
+            .has-error {
+                .ant-form-explain{
+                    width: 100%!important;
+                    //text-align: center!important;
+                    margin-top: 3px;
+                }
+                &>.ant-form-item-children >div{
+                    border: 1px dashed red;
+                }
+            }
+        }
+    }
+    .rule-title{
+        margin-bottom: 15px;
+    }
+    .icon-button{
+        display: inline-block;
+        border:1px dashed #12b362;
+        padding:5px 40px;
+        cursor: pointer;
+        .anticon-plus{
+            color:#12b362;
+            font-size: 30px;
+        }
+        &:active,&:hover{
+            border:1px solid #12b362;
+        }
+    }
+    .anticon-minus-circle{
+        color:red;
+        font-size: 30px;
+        cursor: pointer;
+        position: absolute;
+        right: 10px;
+        top: 0;
+    }
+} 
