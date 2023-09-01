@@ -1,0 +1,17 @@
+node.js内容
+1：什么是node
+node.jss 基于chromeV8引擎的JavaScript运行环境，它允许服务器端执行JavaScript代码
+2：node的优点  
+ Node.js 在非阻塞I/O、事件驱动、轻量级、高性能等方面的优势
+3：如何在node上面执行异步
+ （1） 可以利用回调函数呀
+ （2） 订阅/打印呀
+  (3) 可以利用prmoise 执行异步操作呀
+  (4) 可以利用saync/awit 等待执行操作
+4：node 的包管理
+    npm 执行 
+5：node 模板系统是
+    导入 import
+    导出 export default
+6： **如何处理跨域请求？**  
+    - 提到 CORS（跨域资源共享）以及如何在 Node.js 中实现跨域请求处理

@@ -1,0 +1,22 @@
+
+	1.命令提示符（后台管理员中使用）
+nvm 的下载地址 https://github.com/coreybutler/nvm-windows/releases   点击nvm-setup.exe    
+	下载新的node。js版本
+	nvm install 版本号
+	nvm ls available  查看有哪些版本
+	nvm use 想要应用的版本号
+	nvm ls  查看当前所用的版本号
+	nvm uninstall 卸载的版本号
+
+
+跑环境的 
+      首先  调试到git跑代码
+		ls
+		安装依赖 yarn install
+		再去  rm -rf node_modules/     指令
+		然后  安装依赖 yarn install
+git  版本提交     首先拉一下代码  git pull
+	          添加上    git add .
+	         提交 git commit -m '输入提交名字'
+	        然后推送上去   git push  
+ 
