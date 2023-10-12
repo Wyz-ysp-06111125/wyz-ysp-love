@@ -1,6 +1,6 @@
 node.js内容
 1：什么是node
-node.jss 基于chromeV8引擎的JavaScript运行环境，它允许服务器端执行JavaScript代码
+node.js 基于chromeV8引擎的JavaScript运行环境，它允许服务器端执行JavaScript代码
 2：node的优点  
  Node.js 在非阻塞I/O、事件驱动、轻量级、高性能等方面的优势
 3：如何在node上面执行异步
