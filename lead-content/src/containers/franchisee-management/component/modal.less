@@ -1,0 +1,159 @@
+
+.search-form.accountingSubjects .ant-form-item .ant-form-item-label{
+    width:110px;
+}
+
+.ant-table-tbody>tr>td.proofManage-td{
+    padding:0;
+    >div{
+        height:100px;
+        padding:0 8px;
+        border-bottom: 1px solid #e8e8e8;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        &.proofManage-td-special{
+            display: block;
+        }
+        &:last-child{
+            border-bottom: 0;
+        }
+    }
+}
+
+.ant-table-tbody>tr>td.table-row-item{
+    padding:0;
+    > div{
+        line-height: 50px;
+        text-align: center;
+        padding:0 10px;
+        overflow-x: auto;
+        // text-overflow: ellipsis;
+        white-space: nowrap;
+        &.table-row-item-special{
+            display: block;
+        }
+        &:last-child{
+            border-bottom: 0;
+        }
+    }
+    > div:not(:last-child) {
+        border-bottom: 1px solid #e8e8e8;
+    }
+}
+
+.proofManage-bill-print{
+    margin-bottom: 16px;
+}
+
+.proofManage-bill{
+    border:1px solid #e8e8e8;
+    padding:8px 16px;
+    .proofManage-bill-title{
+        font-size:24px;
+        color:#000;
+        text-align: center;
+    }
+
+    .proofManage-bill-subtitle{
+        display:flex;
+        justify-content: space-between;
+    }
+}
+
+.proofManage-bill-table{
+    .ant-table-thead>tr>th{
+        background: transparent;
+    }
+    .ant-table-thead>tr>th.proofManage-bill-th,.ant-table-tbody>tr>td.proofManage-bill-th{
+        padding:0;
+    }
+    .proofManage-bill-unit{
+        border-top:1px solid #e8e8e8;
+        >span{
+            border-right:1px solid #e8e8e8;
+            line-height: 21px;
+            font-size: 12px;
+            &:last-child{
+                border:0;
+            }
+        }
+    }
+
+    .ant-table-tbody>tr{
+        
+        >td{
+            padding:0;
+            >span{
+                >div{
+                    padding:16px;
+                }
+            }
+            &.proofManage-bill-th{
+                position: relative;
+                >span{
+                    display: block;
+                    height: 100%;
+                    position: absolute;
+                    width: 100%;
+                    top: 0;
+                    left: 0;
+                    >div{
+                        height:100%;
+                        padding:0;
+                        display: flex;
+                        align-items: center;
+                        >span{
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+                    }
+                }
+                span{
+                    height: 100%;
+                    vertical-align: middle;
+                    
+                    border-right:1px solid #e8e8e8;
+                    &:last-child{
+                        border:0;
+                    }
+                }
+            }
+                
+        }
+    }
+    .anticon{
+        font-size: 20px;
+        &.anticon-plus-circle{
+            color:#12b362
+        }
+    }
+}
+
+@media print {
+     #root{
+         display: none;
+     }
+    .showPrint{ 
+        width:100%!important;
+        .ant-modal-body{
+            padding:0 8px;
+        }
+        .ant-modal-content{
+            display:block;
+            box-shadow:none
+        }
+        .proofManage-bill-print{
+            display: none;
+        }
+    }
+    .ant-modal-footer,.ant-modal-header,.ant-modal-close{
+        display:none;
+    }
+
+}
+.ant-row{
+    margin: 0;
+}

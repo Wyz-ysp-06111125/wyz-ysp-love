@@ -1,0 +1,49 @@
+第一个  html2canvas   截图工具
+    const targetDom = document.getElementById('myElement');
+    const copyDom = targetDom.cloneNode(true);
+    copyDom.style.width = `${targetDom.scrollWidth}px`;
+    copyDom.style.height = `${targetDom.scrollHeight}px`;
+    document.getElementById('myElement').appendChild(copyDom);
+    //截图得时候可以带上  echarts图片 用useCORS控制
+    html2canvas(copyDom, {
+      useCORS: true,
+      allowTaint: true,
+    }).then((canvas) => {
+      // eslint-disable-next-line
+      const dataImg = new Image();
+      dataImg.src = canvas.toDataURL('image/png');
+      const alink = document.createElement('a');
+      alink.href = dataImg.src;
+      alink.download = '保存实验截图.jpg';
+      alink.click();
+      copyDom.remove();
+      const { labId } = this.state;
+      request({
+        url: '/dynamic/ScreenCaptureLog',
+        method: 'get',
+        data: {
+          labId,
+        },
+      }).then(() => {
+        message.success('截图成功');
+      });
+    });
+
+第二个  时间选择器的用法
+ <FormItem label="按日查询">
+            {getFieldDecorator('dateRange', {
+              initialValue: [moment().subtract(29, 'days'), moment()],
+            })(<RangePicker
+              ranges={{
+                昨天: [moment().subtract(1, 'day'), moment().subtract(1, 'day')],
+                今天: [moment(), moment()],
+                最近一周: [moment().subtract(6, 'day'), moment()],
+                最近30天: [moment().subtract(29, 'day'), moment()],
+                最近60天: [moment().subtract(59, 'day'), moment()],
+                最近90天: [moment().subtract(89, 'day'), moment()],
+                最近120天: [moment().subtract(119, 'day'), moment()],
+                最近150天: [moment().subtract(149, 'day'), moment()],
+                最近180天: [moment().subtract(179, 'day'), moment()],
+              }}
+            />)}
+          </FormItem>
