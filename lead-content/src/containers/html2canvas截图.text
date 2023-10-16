@@ -1,0 +1,105 @@
+ handleCapture = () => {
+    // 当前屏幕所以内容
+    // html2canvas(document.body, {
+    //   allowTaint: false,
+    //   useCORS: true,
+    // }).then(function (canvas) {
+    //   // toImage
+    //   const dataImg = new Image()
+    //   dataImg.src = canvas.toDataURL('image/png')
+    //   const alink = document.createElement("a");
+    //   alink.href = dataImg.src;
+    //
+    //   alink.download = "testImg.jpg";
+    //
+    //   alink.click();
+    // });
+
+    // 找到当前的元素
+    // const element = document.getElementById('myElement');
+    // html2canvas(element, {
+    //   scrollX: 0,
+    //   scrollY: 0,
+    // })
+    //   .then(canvas => {
+    //     const dataImg = new Image()
+    //     dataImg.src = canvas.toDataURL('image/png')
+    //     const alink = document.createElement("a");
+    //     alink.href = dataImg.src;
+    //
+    //     alink.download = "testImg.jpg";
+    //
+    //     alink.click();
+
+    //   });
+
+    // html2canvas(this.elementRef.current).then(canvas => {
+    //   // 处理截取的图像数据（canvas）
+    //   const dataImg = new Image()
+    //   dataImg.src = canvas.toDataURL('image/png')
+    //   const alink = document.createElement("a");
+    //   alink.href = dataImg.src;
+    //
+    //   alink.download = "testImg.jpg";
+    //
+    //   alink.click();
+    // });
+    // document.body.remove();
+    // const body = document.body
+
+    // document.body.remove()
+
+    // 获取最外层的<div>元素
+    // const divElement = document.getElementById('myElement');
+    // const copyDom = divElement.cloneNode(true);
+    // // 获取<div>元素的父元素
+    // const parentElement = divElement.parentElement;
+
+    // // 创建新的<body>元素
+    // const newBody = document.createElement('body');
+    // //  截取的长度
+    // newBody.style.width = `${divElement.scrollWidth}px`;
+    // newBody.style.height = `${divElement.scrollHeight}px`;
+    // // 从父元素中移除<div>元素
+    // parentElement.removeChild(divElement);
+
+    // // 将<div>元素添加到新的<body>元素中
+    // newBody.appendChild(copyDom);
+
+    // // 将新的<body>元素添加到document的<body>中
+    // document.body = newBody;
+    // console.log(document.body)
+    // debugger
+    // const targetDom = document.body;
+    // console.log(targetDom)
+    // debugger
+
+    const targetDom = document.getElementById('myElement');
+    const copyDom = targetDom.cloneNode(true);
+    copyDom.style.width = `${targetDom.scrollWidth}px`;
+    copyDom.style.height = `${targetDom.scrollHeight}px`;
+    document.getElementById('myElement').appendChild(copyDom);
+    html2canvas(copyDom, {
+      useCORS: true,
+      allowTaint: true,
+    }).then((canvas) => {
+      // eslint-disable-next-line
+      const dataImg = new Image();
+      dataImg.src = canvas.toDataURL('image/png');
+      const alink = document.createElement('a');
+      alink.href = dataImg.src;
+      alink.download = '保存实验截图.jpg';
+      alink.click();
+      copyDom.remove();
+      const { labId } = this.state;
+      request({
+        url: '/dynamic/ScreenCaptureLog',
+        method: 'get',
+        data: {
+          labId,
+        },
+      }).then(() => {
+        message.success('截图成功');
+      });
+    });
+  };
