@@ -1,0 +1,25 @@
+//一个简单得promise 封装方法
+
+var promiseObj = new Promise(function (resolve, reject) {
+    let offer = false;
+    setTimeout(() => {
+        if (offer) {
+            resolve({
+                msg: '上班去',
+                company: 'xxxx公司'
+            })
+        } else {
+            reject({
+                msg: '继续面试'
+            })
+        }
+    }, 1000);
+});
+// 获取promiseObj保存的数据
+promiseObj.then(function (res) {
+    console.log('成功的信息:', res);
+}, function (err) {
+    console.log('失败的信息:', err);
+})
+
+

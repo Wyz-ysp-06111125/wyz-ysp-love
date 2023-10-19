@@ -1,0 +1,45 @@
+const transformUrls = (obj = {}, projectPre = '') =>
+    Object.keys(obj).reduce((ret, key) => {
+        ret[key] = {
+            ...obj[key],
+            url: `${'请求得地址'}${projectPre}${obj[key].url}`
+        };
+
+        return ret;
+    }, {});
+
+
+// 使用方式
+export const URLS = transformUrls({
+    main: {
+        url: '/lab/result/main',
+        method: 'get',
+        code: 200,
+        messageRedefine: 'message',
+    },
+    listGroup: {
+        url: '/lab/result/listGroup',
+        method: 'get',
+        code: 200,
+        messageRedefine: 'message',
+    },
+    getCoreIndicator: {
+        url: '/lab/result/keyIndicator',
+        method: 'get',
+        code: 200,
+        messageRedefine: 'message',
+    },
+    analysicList: {
+        url: '/lab/result/list',
+        method: 'post',
+        code: 200,
+        messageRedefine: 'message',
+    },
+    labList: {
+        url: '/lab/info/list',
+        method: 'post',
+        code: 200,
+        messageRedefine: 'message',
+    },
+
+}, "13413-12341 可以输入请求数据得接口内容");
