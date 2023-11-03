@@ -1,0 +1,8 @@
+`document.location.href`: 返回当前页面的完整 URL。
+- `document.location.protocol`: 返回页面的协议（如 "http:" 或 "https:"）。
+- `document.location.hostname`: 返回主机名部分，不包括协议和端口。
+- `document.location.port`: 返回页面使用的端口号。
+- `document.location.pathname`: 返回页面的路径部分。
+- `document.location.search`: 返回查询字符串部分，包括 "?"。
+- `document.location.hash`: 返回页面的哈希部分，包括 "#"。
+- `document.location.origin`: 返回协议、主机名和端口的组合，但不包括路径或查询字符串

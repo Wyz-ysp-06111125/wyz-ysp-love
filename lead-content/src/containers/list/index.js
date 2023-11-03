@@ -1,4 +1,4 @@
-import { Button, Form, Input, message } from "antd";
+import { Button, Card, Form, Input, message } from "antd";
 import React from "react";
 
 class List extends React.Component {
@@ -25,6 +25,7 @@ class List extends React.Component {
   // }
   onFinish = (values) => {
     console.log('Received values from form:', values);
+    debugger
     if (values.data && values.number) {
       const data = values.data
       const array = []
@@ -48,55 +49,32 @@ class List extends React.Component {
     // const { getFieldDecorator } = this.props.form;
     return (
       <div>
-        {/* <Form>
-                    <Form.Item label="内容">
-                    {getFieldDecorator('data', {
-              rules: [{
-                required: true, message: '请选择',
-              }],
-            })(
-                <Input></Input>
-            )}
-                    </Form.Item>
-                    <Form.Item label="计算">
-                    {getFieldDecorator('number', {
-              rules: [{
-                required: true, message: '请选择',
-              }],
-            })(
-                <Input></Input>
-            )}
-                    </Form.Item>
-                     <Form.Item
-      label="Username"
-      name="username"
-      rules={[
-        {
-          required: true,
-          message: 'Please input your username!',
-        },
-      ]}
-    >
-      <Input />
-    </Form.Item>
-                    <Button onClick={()=>{this.queryData()}}>查看</Button>
-                </Form> */}
+        <Card title="卡片内容" style={{ margin: 15 }}>
+          <Form onFinish={this.onFinish}>
 
-        <Form onFinish={this.onFinish}>
-          <Form.Item label="Name" name="data">
-            <Input />
-          </Form.Item>
+            {/* <Form layout="inline"> */}
+            <Form.Item
+              label="Name" name="data" rules={[{ required: true, message: "请填写名字！" }]}>
+              <Input style={{ width: 180 }} />
+            </Form.Item>
+            <Form.Item
+              label="Email" name="number" rules={[{ required: true, message: "请填写邮箱！" }]}>
+              <Input style={{ width: 180 }} />
+            </Form.Item>
 
-          <Form.Item label="Email" name="number">
-            <Input />
-          </Form.Item>
-
-          <Form.Item>
-            <Button type="primary" htmlType="submit">
-              Submit
-            </Button>
-          </Form.Item>
-        </Form>
+            <Form.Item labelCol={{
+              span: 6,
+            }}
+              wrapperCol={{
+                span: 18,
+              }}>
+              <Button type="primary" htmlType="submit">
+                Submit
+              </Button>
+            </Form.Item>
+          </Form>
+          {/* </Form> */}
+        </Card>
       </div>
     )
   }
