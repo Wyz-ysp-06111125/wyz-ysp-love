@@ -1,6 +1,6 @@
 import { Button, Card, Form, Input, message } from "antd";
 import React from "react";
-
+import './index.less'
 class List extends React.Component {
   constructor(props) {
     super(props)
@@ -35,6 +35,8 @@ class List extends React.Component {
         aa,
         number: array.length = number
       })
+      console.log(aa)
+
     } else {
       message.error("请填写内容")
     }
@@ -48,7 +50,8 @@ class List extends React.Component {
     console.log(number)
     // const { getFieldDecorator } = this.props.form;
     return (
-      <div>
+      <div className="list-data">
+        <span className="pxpxpx"> 1px</span>
         <Card title="卡片内容" style={{ margin: 15 }}>
           <Form onFinish={this.onFinish}>
 
@@ -61,7 +64,6 @@ class List extends React.Component {
               label="Email" name="number" rules={[{ required: true, message: "请填写邮箱！" }]}>
               <Input style={{ width: 180 }} />
             </Form.Item>
-
             <Form.Item labelCol={{
               span: 6,
             }}
@@ -72,6 +74,22 @@ class List extends React.Component {
                 Submit
               </Button>
             </Form.Item>
+            <table className="table-all">
+              <thead className="table-con">
+                <tr>
+                  <th>第一行</th>
+                  <th>第二行</th>
+                  <th>第三行</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Input框</td>
+                  <td>select下拉框</td>
+                  <td>select下拉框</td>
+                </tr>
+              </tbody>
+            </table>
           </Form>
           {/* </Form> */}
         </Card>
