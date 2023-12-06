@@ -1,14 +1,92 @@
-import React from "react";
-import {Button} from 'antd'
-class ABC extends React.Component{
-    render(){
-        return(
-            <div>
-                <Button type="primary" onClick={()=>{window.open('/about')}}>内容展示 </Button>
-                <Button type="primary" onClick={()=>{window.open('/list')}}>列表内容展示</Button>
-
-            </div>
-        )
+import React, { useState } from 'react';
+import { Breadcrumb, Layout, Menu, theme } from 'antd';
+import sub from './config'
+import './index.less'
+const { Header, Content, Sider } = Layout;
+const childData = sub.map((val, index) => {
+    return {
+        key: val.index,
+        label: val.city,
+        icon: React.createElement(val.icon),
+        children: val?.children?.map((item, itemindex) => {
+            return {
+                key: `${val.index}${item.index}`,
+                label: item.code
+            }
+        })
     }
-}
-export default ABC
+})
+
+const App = () => {
+    const [key, setKey] = useState(['1111', '111'])
+    const [data] = useState(childData)
+    const {
+        token: { colorBgContainer },
+    } = theme.useToken();
+
+    const onMenu = (item) => {
+        setKey(item.keyPath)
+    }
+
+    return (
+        <div className='main-layout' >
+            <Layout >
+                <Header
+                    style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                    }}
+                >
+                    <div className="demo-logo" >任意键</div>
+                    {/* <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']} items={items1} /> */}
+                </Header>
+                <Layout>
+                    <Sider
+                        width={200}
+                        style={{
+                            background: colorBgContainer,
+                        }}
+                    >
+                        <Menu
+                            mode="inline"
+                            defaultSelectedKeys={['1111']}
+                            defaultOpenKeys={['111']}
+                            onClick={(item) => { onMenu(item) }}
+                            style={{
+                                height: '100%',
+                                borderRight: 0,
+                            }}
+                            items={data}
+                        />
+                    </Sider>
+                    <Layout
+                        style={{
+                            padding: '0 24px 24px',
+                        }}
+                    >
+                        <Breadcrumb
+                            style={{
+                                margin: '16px 0',
+                            }}
+                        >
+                            <Breadcrumb.Item>任意键</Breadcrumb.Item>
+                            <Breadcrumb.Item>{sub.map((val) => String(val.index) === key[1] && val.city)}</Breadcrumb.Item>
+                            <Breadcrumb.Item>{sub.map((val) => String(val.index) === key[1] ? val.children.map((item) => String(`${val.index}${item.index}`) === key[0] && item.code) : null)}</Breadcrumb.Item>
+                        </Breadcrumb>
+                        <Content
+                            style={{
+                                padding: 24,
+                                margin: 0,
+                                minHeight: 280,
+                                background: colorBgContainer,
+                            }}
+                        >
+                            {sub.map((val) => String(val.index) === key[1] ? val.children.map((item) => String(`${val.index}${item.index}`) === key[0] && item.data) : null)}
+                        </Content>
+                    </Layout>
+                </Layout>
+            </Layout>
+        </div >
+    );
+};
+export default App;

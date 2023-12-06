@@ -40,7 +40,6 @@ class List extends React.Component {
     } else {
       message.error("请填写内容")
     }
-
   };
 
 
@@ -51,7 +50,6 @@ class List extends React.Component {
     // const { getFieldDecorator } = this.props.form;
     return (
       <div className="list-data">
-        <span className="pxpxpx"> 1px</span>
         <Card title="卡片内容" style={{ margin: 15 }}>
           <Form onFinish={this.onFinish}>
 
