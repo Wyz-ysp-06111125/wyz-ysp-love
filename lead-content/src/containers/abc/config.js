@@ -2,6 +2,7 @@
 import { LaptopOutlined, NotificationOutlined, UserOutlined } from '@ant-design/icons';
 import List from '../list';
 import ListData from './component/content';
+import HanDan from './component/hebei/handan';
 const sub = [
     {
         city: "权限",
@@ -49,7 +50,7 @@ const sub = [
             key: 'handan',
             content: "自古美人，出邯郸",
             code: "邯郸",
-            data: null
+            data: <HanDan></HanDan>
         }]
     },
     {
