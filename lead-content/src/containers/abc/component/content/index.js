@@ -28,7 +28,9 @@ const columns = [
                 {/* eslint-disable-next-line  */}
                 <a href="javascript:;" rel="noreferrer noopener" style={{ marginRight: 10 }} >编辑</a>
                 {/* eslint-disable-next-line  */}
-                <a href="javascript:;" rel="noreferrer noopener">查看</a>
+                <a href="javascript:;" rel="noreferrer noopener" style={{ marginRight: 10 }}>查看</a>
+                  {/* eslint-disable-next-line  */}
+                <a href="javascript:;" rel="noreferrer noopener">删除</a>
             </div>
         )
     }]

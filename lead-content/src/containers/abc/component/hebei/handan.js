@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import html2canvas from 'html2canvas';
+// import html2canvas from 'html2canvas';
 import * as echarts from 'echarts';
-import { Button } from 'antd';
+// import { Button } from 'antd';
 const HanDan = () => {
   useEffect(() => {
     var chartDom = document.getElementById('main');
@@ -79,28 +79,29 @@ const HanDan = () => {
     option && myChart.setOption(option);
 
   }, [])
-  const onScreencapture = () => {
-    const targetDom = document.getElementById('myElement');
-    const copyDom = targetDom.cloneNode(true);
-    copyDom.style.width = `${targetDom.scrollWidth}px`;
-    copyDom.style.height = `${targetDom.scrollHeight}px`;
-    document.getElementById('myElement').appendChild(copyDom);
-    html2canvas(copyDom, {
-      useCORS: true,
-      allowTaint: true,
-    }).then((canvas) => {
-      // eslint-disable-next-line
-      const dataImg = new Image();
-      dataImg.src = canvas.toDataURL('image/png');
-      const alink = document.createElement('a');
-      alink.href = dataImg.src;
-      alink.download = '保存实验截图.jpg';
-      alink.click();
-      copyDom.remove();
-    });
-  }
+  // const onScreencapture = () => {
+  //   const targetDom = document.getElementById('myElement');
+  //   debugger
+  //   const copyDom = targetDom.cloneNode(true);
+  //   copyDom.style.width = `${targetDom.scrollWidth}px`;
+  //   copyDom.style.height = `${targetDom.scrollHeight}px`;
+  //   document.getElementById('myElement').appendChild(copyDom);
+  //   html2canvas(copyDom, {
+  //     // useCORS: true,
+  //     allowTaint: true,
+  //   }).then((canvas) => {
+  //     // eslint-disable-next-line
+  //     const dataImg = new Image();
+  //     dataImg.src = canvas.toDataURL('image/png');
+  //     const alink = document.createElement('a');
+  //     alink.href = dataImg.src;
+  //     alink.download = '保存实验截图.jpg';
+  //     alink.click();
+  //     copyDom.remove();
+  //   });
+  // }
   return <div id='myElement'>
-    <Button className="demo-log" onClick={() => { onScreencapture() }}>截屏</Button>
+    {/* <Button className="demo-log" onClick={() => { onScreencapture() }}>截屏</Button> */}
     <div style={{ width: '100%', height: 500 }} id='main'></div>
   </div>
 };

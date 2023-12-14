@@ -3,6 +3,7 @@ import { LaptopOutlined, NotificationOutlined, UserOutlined } from '@ant-design/
 import List from '../list';
 import ListData from './component/content';
 import HanDan from './component/hebei/handan';
+import Ningbo from './component/ningbo';
 const sub = [
     {
         city: "权限",
@@ -35,7 +36,7 @@ const sub = [
             key: '宁波',
             code: "宁波",
             content: "风华美貌，宁波之乡",
-            data: null
+            data: <Ningbo></Ningbo>
         }],
     },
 
