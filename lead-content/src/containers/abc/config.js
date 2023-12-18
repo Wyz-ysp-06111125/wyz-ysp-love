@@ -4,6 +4,7 @@ import List from '../list';
 import ListData from './component/content';
 import HanDan from './component/hebei/handan';
 import Ningbo from './component/ningbo';
+import ReactBeacutiful from './component/react-bueatful-dnd';
 const sub = [
     {
         city: "权限",
@@ -20,7 +21,7 @@ const sub = [
         }],
     },
     {
-        city: "浙江",
+        city: "js实现得功能",
         index: 1,
         key: 2,
         content: "浙江省属于中国的南方地区",
@@ -28,20 +29,20 @@ const sub = [
         children: [{
             index: 1,
             key: 'hangzhou',
-            code: "杭州",
+            code: "表单内容",
             content: "上有天堂，下有苏杭",
             data: <List></List>,
         }, {
             index: 2,
-            key: '宁波',
-            code: "宁波",
+            key: 'ningbo',
+            code: "动态表格",
             content: "风华美貌，宁波之乡",
             data: <Ningbo></Ningbo>
         }],
     },
 
     {
-        city: "河北",
+        city: "插件实现功能",
         index: 2,
         key: 3,
         content: "河北省属于中国的北方地区",
@@ -50,8 +51,14 @@ const sub = [
             index: 1,
             key: 'handan',
             content: "自古美人，出邯郸",
-            code: "邯郸",
+            code: "echart",
             data: <HanDan></HanDan>
+        }, {
+            index: 2,
+            key: 'reactbeautiful',
+            content: "构建一个可以拖拽的范围。",
+            code: "react-beautiful-dnd",
+            data: <ReactBeacutiful></ReactBeacutiful>
         }]
     },
     {

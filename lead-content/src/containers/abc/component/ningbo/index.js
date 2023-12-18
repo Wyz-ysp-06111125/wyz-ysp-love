@@ -37,7 +37,7 @@ function Ningbo() {
             <h2>
                 动态表格内容
             </h2>
-            <Form  onFinish={onFinish} >
+            <Form onFinish={onFinish} >
                 <table className="table-all">
                     <thead className="table-con">
                         <tr>
@@ -87,6 +87,10 @@ function Ningbo() {
                     <Button type="primary" htmlType="submit">提交</Button>
                 </div>
             </Form>
+            <p style={{ color: "red" }}>
+                动态页面中得内容  利用hooks编译而成 动态表格添加或者删除得时候我们要去获取到data
+                使用扩展运算符[...data] 获取 否则js当中用变量接收是只获取了长度
+            </p>
         </div>
     )
 

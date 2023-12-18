@@ -1,13 +1,12 @@
 import React, { useEffect } from 'react';
-// import html2canvas from 'html2canvas';
+import html2canvas from 'html2canvas';
 import * as echarts from 'echarts';
-// import { Button } from 'antd';
+import { Button } from 'antd';
 const HanDan = () => {
   useEffect(() => {
     var chartDom = document.getElementById('main');
-    var myChart = echarts.init(chartDom);
+    var myChart = echarts.init(chartDom, null, { renderer: 'svg' });
     var option;
-
     setTimeout(function () {
       option = {
         legend: {},
@@ -79,30 +78,36 @@ const HanDan = () => {
     option && myChart.setOption(option);
 
   }, [])
-  // const onScreencapture = () => {
-  //   const targetDom = document.getElementById('myElement');
-  //   debugger
-  //   const copyDom = targetDom.cloneNode(true);
-  //   copyDom.style.width = `${targetDom.scrollWidth}px`;
-  //   copyDom.style.height = `${targetDom.scrollHeight}px`;
-  //   document.getElementById('myElement').appendChild(copyDom);
-  //   html2canvas(copyDom, {
-  //     // useCORS: true,
-  //     allowTaint: true,
-  //   }).then((canvas) => {
-  //     // eslint-disable-next-line
-  //     const dataImg = new Image();
-  //     dataImg.src = canvas.toDataURL('image/png');
-  //     const alink = document.createElement('a');
-  //     alink.href = dataImg.src;
-  //     alink.download = '保存实验截图.jpg';
-  //     alink.click();
-  //     copyDom.remove();
-  //   });
-  // }
+  const onScreencapture = () => {
+    const targetDom = document.getElementById('myElement');
+    debugger
+    const copyDom = targetDom.cloneNode(true);
+    copyDom.style.width = `${targetDom.scrollWidth}px`;
+    copyDom.style.height = `${targetDom.scrollHeight}px`;
+    document.getElementById('myElement').appendChild(copyDom);
+    html2canvas(copyDom, {
+      // useCORS: true,
+      allowTaint: true,
+    }).then((canvas) => {
+      // eslint-disable-next-line
+      const dataImg = new Image();
+      dataImg.src = canvas.toDataURL('image/png');
+      const alink = document.createElement('a');
+      alink.href = dataImg.src;
+      alink.download = '保存实验截图.jpg';
+      alink.click();
+      copyDom.remove();
+    });
+  }
   return <div id='myElement'>
-    {/* <Button className="demo-log" onClick={() => { onScreencapture() }}>截屏</Button> */}
+    <Button className="demo-log" onClick={() => { onScreencapture() }}>截屏</Button>
     <div style={{ width: '100%', height: 500 }} id='main'></div>
+    <p style={{ color: "red" }}>
+      当前页面采用 react框架   使用echarts 绘制而成  使用了html2Canvas 截屏得功能将截取整个页面
+      其中由于html2Canvas 采用得canvas功能截取  而echarts表也是
+      由canvas绘制而成  造成html2Canvas 中截取不到echarts表
+      解决方法  采用了将echarts表个绘制格式修改为 svg格式  就可实现截图功能
+    </p>
   </div>
 };
 export default HanDan;
