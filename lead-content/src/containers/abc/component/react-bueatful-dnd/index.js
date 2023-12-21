@@ -100,7 +100,7 @@ export default function App() {
                     )}
                 </Droppable>
             </DragDropContext>
-            <p style={{ color: "red" }}>实例经供参考</p>
+            <p style={{ color: "red" }}>实例经供参考,在本页面中代码全部正确，如果不可用，可以复制出去。</p>
         </div>
     );
 }
