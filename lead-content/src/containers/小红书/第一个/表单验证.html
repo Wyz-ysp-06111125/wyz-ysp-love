@@ -175,12 +175,12 @@
 function onAdime() {
   //用户名只能输入中文
   if (document.getElementById('telname').value.replace(/[^\u4E00-\u9FA5]/g, '')) {
-    debugger
+    
     spans[0].className = 'success';
     spans[0].innerHTML = '&radic;恭喜您输入正确';
     return true;
   } else {
-    debugger
+    
     spans[0].className = 'error';
     spans[0].innerHTML = '&Chi;格式不正确,用户名只能输入中文';
     return false;
@@ -193,33 +193,27 @@ function onPassword() {
     (
       document.getElementById('password').value.length <= 9 && document.getElementById('password').value.length >= 6
     )) {
-    debugger
     spans[1].className = 'success';
     spans[1].innerHTML = '&radic;恭喜您输入正确';
     return true;
   } else {
-    debugger
     spans[1].className = 'error';
     spans[1].innerHTML = '&Chi;格式不正确,密码只能是六位到九位';
     return false;
   }
-  // }
 }
 function onPasswordcol() {
   //确认密码 只能是六位到九位  和登录密码一致
   if (document.getElementById('passwordcol').value.replace(/\D/g, '') == document.getElementById('password').value.replace(/\D/g, '')
   ) {
-    debugger
     spans[2].className = 'success';
     spans[2].innerHTML = '&radic;恭喜您密码一致';
     return true;
   } else {
-    debugger
     spans[2].className = 'error';
     spans[2].innerHTML = '&Chi;格式不正确,两次密码不一致，请重新输入';
     return false;
   }
-  // }
 }
 
 function isEmail() {
@@ -228,12 +222,12 @@ function isEmail() {
   console.log();
   //文本框不为空，并且验证邮箱正则成功，给出正确提示
   if (document.getElementById('email').value != null && document.getElementById('email').value.search(reg) != -1) {
-    debugger
+    
     spans[3].className = 'success';
     spans[3].innerHTML = '&radic;邮箱格式正确！';
     return true;
   } else {
-    debugger
+    
     spans[3].className = 'error';
     spans[3].innerHTML = '&Chi;邮箱格式错误！';
     return false;
@@ -249,7 +243,7 @@ function isDuanxin() {
     spans[4].innerHTML = '&radic;恭喜您验证码输入正确';
     return true;
   } else {
-    debugger
+    
     spans[4].className = 'error';
     spans[4].innerHTML = '&Chi;格式不正确,验证码必须为六位！';
     return false;
@@ -263,7 +257,7 @@ function onPhone() {
     spans[5].innerHTML = '&radic;恭喜您手机号码输入正确';
     return true;
   } else {
-    debugger
+    
     spans[5].className = 'error';
     spans[5].innerHTML = '&Chi;手机号码格式不正确';
     return false;
@@ -272,8 +266,9 @@ function onPhone() {
 
 function querydata() {
   if (onAdime() && onPassword() && onPasswordcol() && isEmail() && isDuanxin() && onPhone()) {
-      debugger
+      
       window.location.href="success.html"
+
 
 
   } else {
