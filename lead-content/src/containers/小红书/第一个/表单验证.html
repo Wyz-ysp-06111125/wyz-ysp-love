@@ -6,34 +6,20 @@
     <title>注册页面</title>
 </head>
 <style>
-    /*清除元素默认的内外边距  */
-    
-    /* * {
-        margin: 0;
-        padding: 0
-    } */
-    /*让所有斜体 不倾斜*/
-    
     em,
     i {
         font-style: normal;
     }
-    /*去掉列表前面的小点*/
         li {
         list-style: none;
     }
-    
     .registerarea {
         height: 580px;
         border: 1px solid #ccc;
         margin-top: 20px;
     }
-    
-    .registerarea a {
-        color: #c81623;
-    }
-    
    
+
     .formreplce li {
         margin-bottom: 15px;
     }
@@ -58,61 +44,27 @@
         margin-left: 10px;
     }
     
-    .error_icon,
-    .success_icon {
-        display: inline-block;
-        width: 20px;
-        height: 20px;
-        background: url(../img/error.png) no-repeat;
-        vertical-align: middle;
-        margin-top: -2px;
-    }
-    
     .success {
         color: #40b83f;
         margin-left: 10px;
     }
-    
-    .success_icon {
-        background-image: url(../img/success.png);
-    }
-    
     .safe {
         padding-left: 187px;
         color: #b2b2b2;
     }
-    
     .safe em {
         padding: 0 12px;
         color: #fff;
     }
-    
     .ruo {
         background-color: #de1111;
     }
-    
     .zhong {
         background-color: #40b83f;
     }
-    
     .qiang {
         background-color: #f79100;
     }
-    
-    .agree {
-        padding-top: 20px;
-        padding-left: 100px;
-    }
-    
-    .agree input {
-        vertical-align: middle;
-        margin-right: 5px;
-    }
-    
-    .agree a {
-        color: #1ba1e6;
-    }
-    
     .over {
         width: 200px;
         height: 34px;
@@ -122,11 +74,7 @@
         color: #fff;
         font-size: 14px;
     }
-    
-    .links {
-        margin-top: 20px;
-        height: 30px;
-    }
+  
     
     .copyright {
         line-height: 20px;
@@ -156,6 +104,9 @@
     .formreplce{
         margin-top: 20px;
     }
+    #left-top{
+        margin-left: 85px;
+    }
 </style>
 
 <body>
@@ -163,7 +114,7 @@
         <div class="registerarea">
             <div class="formreplce">
 
-            <form action="success.html" onsubmit="querydata()">
+            <form >
                 <p class="teptal">
                     <label for="tel">用户名:</label>
                     <input type="text" class="form-input" id="telname" onblur="onAdime()">
@@ -195,272 +146,143 @@
                     <input type="text" class="form-input" id="duanxin" onblur="isDuanxin()">
                     <span class="">
                 </p>
-            </form>
-        </div>
-    </div>
-    </div>
-    <script>
-        // const amides = /[^\u4e00-\u9fa5]/g;
-  
-    var spans = document.querySelectorAll('span');
-        function onAdime() {
-            //用户名只能输入中文
-                    if (document.getElementById('telname').value.replace(/[^\u4E00-\u9FA5]/g,'')) {
-                        debugger
-                        spans[0].className = 'success';
-                        spans[0].innerHTML = '&radic;恭喜您输入正确';
-                        return true;
-                    } else {
-                        debugger
-                        spans[0].className = 'error';
-                        spans[0].innerHTML = '&Chi;格式不正确,用户名只能输入中文';
-                        return false;
-                    }
-                // }
-            }
-        function onPassword() {
-            //密码只能输入数字 只能是六位到九位
-                    if (document.getElementById('password').value.replace(/\D/g,'')&&
-                    (
-                        document.getElementById('password').value.length<=9 && document.getElementById('password').value.length>=6
-                    )) {
-                        debugger
-                        spans[1].className = 'success';
-                        spans[1].innerHTML = '&radic;恭喜您输入正确';
-                        return true;
-                    } else {
-                        debugger
-                        spans[1].className = 'error';
-                        spans[1].innerHTML = '&Chi;格式不正确,密码只能是六位到九位';
-                        return false;
-                    }
-                // }
-            }
-        function onPasswordcol() {
-            //确认密码 只能是六位到九位  和登录密码一致
-                    if (document.getElementById('passwordcol').value.replace(/\D/g,'') ==document.getElementById('password').value.replace(/\D/g,'')
-                    ) {
-                        debugger
-                        spans[2].className = 'success';
-                        spans[2].innerHTML = '&radic;恭喜您密码一致';
-                        return true;
-                    } else {
-                        debugger
-                        spans[2].className = 'error';
-                        spans[2].innerHTML = '&Chi;格式不正确,两次密码不一致，请重新输入';
-                        return false;
-                    }
-                // }
-            }
-
-            function isEmail(){
-  		//定义正则表达式的变量:邮箱正则
-  		var reg=/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
-  		console.log();
-  		//文本框不为空，并且验证邮箱正则成功，给出正确提示
-  		if(document.getElementById('email').value != null && document.getElementById('email').value.search(reg) != -1)
-  		{
-                        debugger
-                        spans[3].className = 'success';
-                        spans[3].innerHTML = '&radic;邮箱格式正确！';
-                        return true;
-                    } else {
-                        debugger
-                        spans[3].className = 'error';
-                        spans[3].innerHTML = '&Chi;邮箱格式错误！';
-                        return false;
-                    }
-  	}
-            function isDuanxin(){
-  		
-  		//短信验证码 必须是6位置
-  		if (document.getElementById('duanxin').value.replace(/\D/g,'')&&
-                    (
-                        document.getElementById('duanxin').value.length ==6 && document.getElementById('duanxin') != null
-                    )) {
-                        debugger
-                        spans[4].className = 'success';
-                        spans[4].innerHTML = '&radic;恭喜您验证码输入正确';
-                        return true;
-                    } else {
-                        debugger
-                        spans[4].className = 'error';
-                        spans[4].innerHTML = '&Chi;格式不正确,验证码必须为六位！';
-                        return false;
-                    }
-  	}
-         function querydata() {
-                if (onAdime() && onPassword() && onPasswordcol() && isEmail() && isDuanxin() && checkRepwd()) {
-                    return true;
-                } else {
-                    alert('用户输入不正确');
-                    return false;
-                }
-            }
-    </script>
-    <!-- <div class="w">
-        <div class="registerarea">
-            <div class="formreplce">
-
-                <form action="success.html" onsubmit='return checkForm()'>
-                    <ul>
-                        <li>
-                            <label for="tel">用户名:</label>
-                            <input type="text" class="inp" id="tel" onblur="onAdime()">
-                            <span class="">
-
-              </span>
-                        </li>
-                        <li>
-                            <label for="">QQ:</label>
-                            <input type="text" class="inp" id="qq" onblur="checkQq()">
-                            <span></span>
-                        </li>
-                        <li>
-                            <label for="">昵称:</label>
-                            <input type="text" class="inp" id="nc" onblur="checkNc()">
-                            <span></span>
-                        </li>
-                        <li>
-                            <label for="">短信验证码:</label>
-                            <input type="text" class="inp" id="msg" onblur="checkMsg()">
-                            <span></span>
-                        </li>
-                        <li>
-                            <label for="">登陆密码:</label>
-                            <input type="text" class="inp" id="pwd" onblur="checkPwd()">
-                            <span>
-              </span>
-                        </li>
-                        <li class="safe">
-                            安全程度
-                            <em class="ruo">弱</em>
-                            <em class="zhong">中</em>
-                            <em class="qiang">强</em>
-                        </li>
-
-                        <li>
-                            <label for="">确认密码:</label>
-                            <input type="text" class="inp" id="surepwd"onblur="checkRepwd()">
-                            <span></span>
-                        </li>
-                        <li class="agree">
-                            <input type="checkbox">同意协议并注册
+                <p class="teptal">
+                    <label for="tel">手机号码:</label>
+                    <input type="text" class="form-input" id="telephone" onblur="onPhone()">
+                    <span class="">
+                </p>
+                <p class="teptal">
+                    <label for="tel">性别:</label>
+                    <input type="radio" name="sev" value="2" checked="false">男
+                    <input type="radio" name="sev"  value="1">女
+                    
+                    <span class="">
+                </p>
+                <p class="teptal" id="left-top">
+                    <input type="checkbox" >同意协议并注册
                             <a href="#">《知果果用户协议》</a>
-                        </li>
-                        <li>
-                            <input type="submit" value="完成注册" class="over">
-                        </li>
-                    </ul>
-                </form>
-            </div>
+                </p>
+                
+            </form>
+            <p  class="teptal" >
+                <button type="submit"  onclick="querydata()" class="over">注册页面</button>
+            </p>
         </div>
     </div>
-    <script>
-        //正则表达式
-        var amide = /[^\u4e00-\u9fa5]/g; //用户名
-        var regqq = /^[1-9]\d{5,9}$/; //qq号码 长度6-10
-        var regnc = /^[\u4e00-\u9fa5a-zA-Z0-9_]{6,10}$/; //昵称
-        var regmsg = /^[1-9]\d{5}$/; //短信验证码
-        // 密码强度正则，最少6位，包括至少个大写字母，1个小写字母，1个数字，1个特殊字符
-        // ()是分组的意思，()(),两个一起写的意思是匹配同时两个，就是“并且”的意思
-        var regpwd = /^.*(?=.{6,})(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*?~]).*$/; //密码
-        //获取用户输入
-        var tel = document.querySelector('#tel');
-        var qq = document.querySelector('#qq');
-        var nc = document.querySelector('#nc');
-        var msg = document.querySelector('#msg');
-        var pwd = document.querySelector('#pwd');
-        var repwd = document.querySelector('#surepwd');
-        //所有的span标签
-        var spans = document.querySelectorAll('span');
-        //用户名验证
-        function onAdime() {
-            // tel.onblur = function() {
-                if (amide.test(tel.value)) {
-                    spans[0].className = 'success';
-                    spans[0].innerHTML = '&radic;恭喜您输入正确';
-                    return true;
-                } else {
-                    spans[0].className = 'error';
-                    spans[0].innerHTML = '&Chi;格式不正确,请重新输入';
-                    return false;
-                }
-            // }
-        }
+    </div>
+   <script>
+           var spans = document.querySelectorAll('span');
+function onAdime() {
+  //用户名只能输入中文
+  if (document.getElementById('telname').value.replace(/[^\u4E00-\u9FA5]/g, '')) {
+    debugger
+    spans[0].className = 'success';
+    spans[0].innerHTML = '&radic;恭喜您输入正确';
+    return true;
+  } else {
+    debugger
+    spans[0].className = 'error';
+    spans[0].innerHTML = '&Chi;格式不正确,用户名只能输入中文';
+    return false;
+  }
+  // }
+}
+function onPassword() {
+  //密码只能输入数字 只能是六位到九位
+  if (document.getElementById('password').value.replace(/\D/g, '') &&
+    (
+      document.getElementById('password').value.length <= 9 && document.getElementById('password').value.length >= 6
+    )) {
+    debugger
+    spans[1].className = 'success';
+    spans[1].innerHTML = '&radic;恭喜您输入正确';
+    return true;
+  } else {
+    debugger
+    spans[1].className = 'error';
+    spans[1].innerHTML = '&Chi;格式不正确,密码只能是六位到九位';
+    return false;
+  }
+  // }
+}
+function onPasswordcol() {
+  //确认密码 只能是六位到九位  和登录密码一致
+  if (document.getElementById('passwordcol').value.replace(/\D/g, '') == document.getElementById('password').value.replace(/\D/g, '')
+  ) {
+    debugger
+    spans[2].className = 'success';
+    spans[2].innerHTML = '&radic;恭喜您密码一致';
+    return true;
+  } else {
+    debugger
+    spans[2].className = 'error';
+    spans[2].innerHTML = '&Chi;格式不正确,两次密码不一致，请重新输入';
+    return false;
+  }
+  // }
+}
 
-        function checkQq() {
-            if (regqq.test(qq.value)) {
-                spans[1].className = 'success';
-                spans[1].innerHTML = '&radic;恭喜您输入正确';
-                return true;
-            } else {
-                spans[1].className = 'error';
-                spans[1].innerHTML = '&Chi;格式不正确,请重新输入';
-                return false;
-            }
-        }
+function isEmail() {
+  //定义正则表达式的变量:邮箱正则
+  var reg = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+  console.log();
+  //文本框不为空，并且验证邮箱正则成功，给出正确提示
+  if (document.getElementById('email').value != null && document.getElementById('email').value.search(reg) != -1) {
+    debugger
+    spans[3].className = 'success';
+    spans[3].innerHTML = '&radic;邮箱格式正确！';
+    return true;
+  } else {
+    debugger
+    spans[3].className = 'error';
+    spans[3].innerHTML = '&Chi;邮箱格式错误！';
+    return false;
+  }
+}
+function isDuanxin() {
+  //短信验证码 必须是6位置
+  if (document.getElementById('duanxin').value.replace(/\D/g, '') &&
+    (
+      document.getElementById('duanxin').value.length == 6 && document.getElementById('duanxin') != null
+    )) {
+    spans[4].className = 'success';
+    spans[4].innerHTML = '&radic;恭喜您验证码输入正确';
+    return true;
+  } else {
+    debugger
+    spans[4].className = 'error';
+    spans[4].innerHTML = '&Chi;格式不正确,验证码必须为六位！';
+    return false;
+  }
+}
+function onPhone() {
+  var regExp = new RegExp("^1[356789]\\d{9}$")
+  //短信验证码 必须是6位置
+  if (regExp.test(document.getElementById('telephone').value)) {
+    spans[5].className = 'success';
+    spans[5].innerHTML = '&radic;恭喜您手机号码输入正确';
+    return true;
+  } else {
+    debugger
+    spans[5].className = 'error';
+    spans[5].innerHTML = '&Chi;手机号码格式不正确';
+    return false;
+  }
+}
 
-        function checkNc() {
-            if (regnc.test(nc.value)) {
-                spans[2].className = 'success';
-                spans[2].innerHTML = '&radic;恭喜您输入正确';
-                return true;
-            } else {
-                spans[2].className = 'error';
-                spans[2].innerHTML = '&Chi;格式不正确,请重新输入';
-                return false;
-            }
-        }
+function querydata() {
+  if (onAdime() && onPassword() && onPasswordcol() && isEmail() && isDuanxin() && onPhone()) {
+      debugger
+      window.location.href="success.html"
 
-        function checkMsg() {
-            if (regmsg.test(msg.value)) {
-                spans[3].className = 'success';
-                spans[3].innerHTML = '&radic;恭喜您输入正确';
-                return true;
-            } else {
-                spans[3].className = 'error';
-                spans[3].innerHTML = '&Chi;格式不正确,请重新输入';
-                return false;
-            }
-        }
 
-        function checkPwd() {
-            if (regpwd.test(pwd.value)) {
-                spans[4].className = 'success';
-                spans[4].innerHTML = '&radic;恭喜您输入正确';
-                return true;
-            } else {
-                spans[4].className = 'error';
-                spans[4].innerHTML = '&Chi;格式不正确,请重新输入';
-                return false;
-            }
-        }
+  } else {
+    
+     alert('用户输入不正确');
+  }
+}
+   </script>
 
-        function checkRepwd() {
-            if (repwd.value == pwd.value) {
-                spans[5].className = 'success';
-                spans[5].innerHTML = '&radic;恭喜您输入正确';
-                return true;
-            } else {
-                spans[5].className = 'error';
-                spans[5].innerHTML = '&Chi;两次密码不一致';
-                return false;
-            }
-        }
-        //提交
-
-        //如果输入都正确，就返回true，然后跳转到success.html页面
-        //否则弹出“用户输入不正确”，返回false，不跳转
-        function checkForm() {
-            if (onAdime() && checkQq() && checkNc() && checkMsg() && checkPwd() && checkRepwd()) {
-                return true;
-            } else {
-                alert('用户输入不正确');
-                return false;
-            }
-        }
-    </script> -->
 </body>
 
 </html>
