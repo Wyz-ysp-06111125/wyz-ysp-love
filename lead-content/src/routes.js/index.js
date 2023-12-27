@@ -8,9 +8,9 @@ function Routers() {
   return (
     <Router>
         <Routes>
-            <Route path="/" exact element={<ABC />}/>
-            <Route path="/about" element={<One />}  />
-            <Route path="/list" element={<List />}  />
+          <Route path="/" exact element={<ABC />}/>
+          <Route path="/about" element={<One />}  />
+          <Route path="/list" element={<List />}  />
         </Routes>
     </Router>
   );
