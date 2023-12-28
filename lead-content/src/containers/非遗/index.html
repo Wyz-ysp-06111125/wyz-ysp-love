@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录页面</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>非物质文化遗产登录</h2>
+
+        <div class="form-group">
+            <label for="username">用户名:</label>
+            <input type="text" id="username" required>
+        </div>
+        <div class="form-group">
+            <label for="password">密码:</label>
+            <input type="password" id="password" required>
+        </div>
+        <div class="form-group-button">
+            <button type="submit" onclick="submit()">登录</button>
+            <button type="clone" onclick="reast()">重置</button>
+
+        </div>
+    </div>
+    <script>
+        //关闭页面
+
+        function reast() {
+            document.getElementById('username').value = "";
+            document.getElementById('password').value = "";
+
+        }
+        function submit() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            // if (username == "admin" && password == "22222") {
+                window.location.href = "./alldata/index.html"
+            // } else {
+            //     alert("请输入正确的账号和密码")
+            // }
+        }
+
+        
+
+    </script>
+</body>
+
+</html>
