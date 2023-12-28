@@ -1,0 +1,376 @@
+/*通用类*/
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	margin: 0 auto;
+	font-size: 14px;
+	background: #FFFFFF;
+	color: #333;
+	position: relative;
+}
+
+img {
+	border: none;
+}
+
+a {
+	cursor: pointer;
+	color: #333;
+	text-decoration: none;
+	outline: none;
+}
+
+ul {
+	list-style-type: none;
+}
+
+em {
+	font-style: normal;
+}
+
+.lt {
+	float: left;
+}
+
+.rt {
+	float: right;
+}
+
+div.clear {
+	font: 0px Arial;
+	line-height: 0;
+	height: 0;
+	overflow: hidden;
+	clear: both;
+}
+
+.clearfix::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.wrapin {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+header {
+	height: 50px;
+	background: #408040;
+}
+
+.nav li {
+	line-height: 50px;
+	float: left;
+	width: 20%;
+	text-align: center;
+	font-size: 16px;
+	position: relative
+}
+
+.nav li a {
+	color: #333;
+}
+
+.banner {
+	display: block;
+}
+
+.banner img {
+	width: 100%;
+	height: 380px;
+	display: block;
+}
+
+.con {
+	padding: 15px;
+	background: #fff;
+}
+
+.top .text {
+	float: left;
+	width: 60%;
+	line-height: 26px;
+}
+
+.top .pic {
+	float: right;
+	width: 38%;
+	margin-top: 20px;
+}
+
+.top .pic img {
+	width: 100%;
+}
+
+.title {
+	padding: 20px 0;
+}
+
+.title h2 {
+	color: #6b4c15;
+}
+
+.tupian ul {
+	margin: 0 -15px;
+}
+
+.tupian ul li {
+	width: 33.33%;
+	float: left;
+	padding: 15px;
+	box-sizing: border-box;
+}
+
+.tupian ul li img {
+	width: 100%;
+	height: 230px;
+	object-fit: cover;
+}
+
+footer {
+	background: #408040;
+	text-align: center;
+	line-height: 50px;
+}
+
+.juese li {
+	position: relative;
+	height: 200px;
+}
+
+.juese li .pic {
+	height: 160px;
+	width: 160px;
+	position: absolute;
+	left: 0;
+	top: 20px;
+	border-radius: 160px;
+	overflow: hidden;
+	border: 1px solid #333;
+}
+
+.juese li .pic img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+
+.juese>li .text {
+	margin-left: 180px;
+	padding-top: 30px;
+}
+
+
+.juese li .text h2 {
+	margin-bottom: 10px;
+}
+
+.juese li .text p {
+	line-height: 26px;
+}
+
+.clearfix>li:hover {
+	transform: scale(1.4);
+}
+
+/* body {
+	background: url("./img/register_bg.png");
+} */
+
+.rg_layout {
+	width: 900px;
+	height: 500px;
+	border: 8px solid #EEEEEE;
+	background-color: white;
+	margin: auto;
+	margin-top: 50px;
+	padding-top: 57px;
+}
+
+.rg_left {
+	float: left;
+	margin: 15px;
+}
+
+.rg_center {
+	float: left;
+}
+
+.rg_right {
+	float: right;
+	margin: 15px;
+}
+
+.rg_left>p:first-child {
+	color: #FFD026;
+	font-size: 20px;
+}
+
+.rg_left>p:last-child {
+	color: #A6A6A6;
+	font-size: 20px;
+}
+
+.rg_right>p:first-child {
+	font-size: 15px;
+
+}
+
+.rg_right p a {
+	color: pink;
+}
+
+.td_left {
+	width: 100px;
+	height: 45px;
+	text-align: right;
+}
+
+.td_right {
+	padding-left: 50px;
+}
+
+#username,
+#password,
+#email,
+#name,
+#tel,
+#birthday,
+#checkcode {
+	width: 251px;
+	height: 32px;
+	border: 1px solid #A6A6A6;
+	border-radius: 5px;
+	padding-left: 10px;
+}
+
+#checkcode {
+	width: 110px;
+}
+
+#img_check {
+	height: 32px;
+	vertical-align: middle;
+}
+
+#btn_sub {
+	width: 150px;
+	height: 40px;
+	background-color: #FFD026;
+	border: 1px solid #FFD026;
+}
+
+.error {
+	color: red;
+}
+
+#td_sub {
+	padding-left: 150px;
+}
+
+
+
+.navtitle {
+	width: 1000px;
+	height: 601px;
+	overflow: hidden;
+}
+
+.onetwosdnagkat {
+	position: relative;
+	margin: 0 auto;
+}
+
+.bar {
+	width: 50px;
+	height: 10px;
+	border: 1px #fff solid;
+	margin: 5px;
+	cursor: pointer;
+	/*transition: 0.4s;*/
+}
+
+.five {
+	position: absolute;
+	bottom: 20px;
+	left: 40%;
+	display: flex;
+}
+
+.bar:hover {
+	background: red;
+}
+
+.wadwadeva {
+	position: absolute;
+	visibility: hidden;
+}
+
+.twosdnagka {
+	width: 500%;
+	height: 100%;
+	display: flex;
+}
+
+/*.three{
+	width: 20%;
+	transition: 0.6s;
+}*/
+/*.three img{
+	width: 100%;
+	height: 100%;
+
+}*/
+
+
+#l1:checked~.a1 {
+	margin-left: 0;
+}
+
+#l2:checked~.a2 {
+	margin-left: -20%;
+}
+
+#l3:checked~.a3 {
+	margin-left: -40%;
+}
+
+#l4:checked~.a4 {
+	margin-left: -60%;
+}
+
+.ul-li {
+	list-style: none;
+	/* 清除列表原有样式 */
+	background-color: rgb(83, 181, 18);
+	width: 90px;
+	top: 42px;
+	left: 60px;
+	position: absolute;
+	display: none;
+}
+
+.huaru:hover .ul-li {
+	display: block;
+}
+
+.ul-li>p {
+	padding: 0px;
+	height: 35px;
+	line-height: 35px;
+	color: #EEEEEE;
+	font-size: 12px;
+	cursor: pointer;
+	border-bottom: 1px #408040 solid;
+}
+
+.ul-li>p:hover {
+	background-color: #408040;
+	color: antiquewhite;
+}

@@ -1,0 +1,36 @@
+
+body{
+    background: linear-gradient(46deg,#03a3de,#02b5a5 41%,#02c27c);
+}
+.top{
+    width: 400px;
+    height: 300px;
+    margin: 10% auto;
+    
+    text-align: center;
+   
+}
+.basck{
+    width: 400px;
+    height: 300px;
+    background-color: #fff;
+    border: 1px rgb(164, 164, 164) solid;
+    border-radius: 10px;
+}
+input{
+    width: 260px;
+    height: 30px;
+    border: 1px rgb(117, 117, 117) solid;
+    border-radius: 20px;
+}
+.denglu p{
+width: 260px;
+height: 40px;
+/* display: block; */
+background-color: #12b362;
+border: 1px rgb(122, 239, 68) solid;
+margin: 20px auto;
+line-height: 40px;
+border-radius: 20px;
+font-size: 16px;
+}
