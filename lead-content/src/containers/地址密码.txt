@@ -1,0 +1,38 @@
+ stable环境：https://stablecenter.caocaokeji.cn/login
+test33环境：https://test33center.caocaokeji.cn/login
+yapi接口地址：https://yapi.caocaokeji.cn/login
+账号 ：12345678900
+密码：caocao123
+沙箱环境：https://sandbox-mobile.caocaokeji.cn/caocao-center/login
+账号：12345678900
+密码：caocao1818
+观海中心stable：https://stableleague.caocaokeji.cn/login
+观海中心test33：https://test33league.caocaokeji.cn/login
+账号：12345678904
+密码：caocao123
+线上曹操中心：https://center.caocaokeji.cn/login
+账号：18849046857
+密码：Wyz.1125
+yapi接口地址：https://yapi.caocaokeji.cn/login
+账号 ：wangyingzhen
+密码：Wyz0611.
+
+自己git地址
+https://github.com/login
+new地址：http://ehr.newtouch.cn/newtouch/Loginx.aspx
+账号：223516
+密码：311430
+请假地址：http://eds.newtouch.cn/eds3/login.html
+账号：223516
+密码：Wyz0611.
+
+git http://git.51caocao.cn/
+账号：wangyingzhen
+密码：Wyz0611.
+
+曹操：https://passport.caocaoglobal.com/?appKey=3b375041-e5a9-4fdc-bbcd-71fe50348386&redirectUrl=https://mailservice.caocaoglobal.com#/
+账号：e-Yingzhen.Wang
+密码：WyzYsp1125..
+曹操：https://mailservice.caocaoglobal.com/index?folderId=AQMkAGJjODFjMGNkLWQzNTYtNDk1ZC05MmU4LWRjMWE0YzE4MTRmNgAuAAADrfq57XHT8kCH7fsyfmUB4QEAW%2FTQny7ZAUqOsPJozaqo1QAAAgEMAAAA&level=1&DisplayName=%25E6%2594%25B6%25E4%25BB%25B6%25E7%25AE%25B1&FolderType=1
+账号：e-Yingzhen.Wang
+密码：WyzYsp1125..
