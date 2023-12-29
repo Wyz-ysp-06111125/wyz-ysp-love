@@ -19,16 +19,29 @@ div, dl, dt, dd, h4, h5, h6, pre, code, form, fieldset, legend, input, button, t
       width: 100%;
       box-sizing: border-box;
       display: flex;
-      height: 80px;
+      height: 60px;
       align-items: center;
       justify-content: center;
       background-color: #000;
       .item{
-        font-size: 28px;
+        font-size: 18px;
         font-family: 'sans-serif';
-        color: #fefefe
+        color: #a29b9b;
       }
     };
+    .content{
+      width: 100%;
+      padding: 45px 150px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-around; 
+      align-items: center;
+      flex-wrap: wrap;
+      .content-item{
+        width: 35%;
+      }
+    }
+    
   }
   .logo{
     width: 100%;
@@ -45,7 +58,7 @@ div, dl, dt, dd, h4, h5, h6, pre, code, form, fieldset, legend, input, button, t
       color: #1d1d1d;
     }
     .text-2{
-     font-size: 28px;
+     font-size: 24px;
      font-family: 'sans-serif';
      color: #1d1d1d;
     }
@@ -70,15 +83,15 @@ div, dl, dt, dd, h4, h5, h6, pre, code, form, fieldset, legend, input, button, t
   }
   .menu{
     width: 100%;
-    height: 60px;
-    line-height: 60px;
+    height: 45px;
+    line-height: 45px;
     padding: 0px 50px 0px 100px;
-    background-color: rgb(36, 35, 35);
+    background-color: rgb(147, 231, 223);
     display: flex;
     align-items: center;
-    border-radius: 3px;
+    border-radius: 5px;
     .menu-item{
-      color: #d5cfcf;
+      color: #1d1d1d;
       margin-right: 70px;
       font-size: 18px;
       width: 80px;
@@ -93,11 +106,11 @@ div, dl, dt, dd, h4, h5, h6, pre, code, form, fieldset, legend, input, button, t
       };
     }
     .menu-item-1{
-      color: #d5cfcf;
+      color: #1d1d1d;
       margin-right: 70px;
       font-size: 18px;
       width: 80px;
-      height: 35px;
+      /* height: 35px; */
       line-height: 35px;
       text-align: center;
       position: relative;
@@ -105,10 +118,12 @@ div, dl, dt, dd, h4, h5, h6, pre, code, form, fieldset, legend, input, button, t
       .menu-item-two{
         width: 90px;
         /* margin-top: 2px; */
+        position: absolute;
+        top: 35px;
         margin-left: -2px;
         padding: 2px;
         padding-top: 20px;
-        background-color: rgba(227, 218, 227, 0.933);
+        background-color: rgba(243, 239, 243, 0.933);
         border-radius: 7px;
         display: none;
         z-index: 100;
@@ -120,7 +135,7 @@ div, dl, dt, dd, h4, h5, h6, pre, code, form, fieldset, legend, input, button, t
           width: 100%;
           z-index: 100;
           &:hover{
-            background-color: rgba(223, 178, 223, 0.933);
+            background-color: rgba(165, 164, 165, 0.933);
             z-index: 100;
           }
         }
@@ -215,17 +230,4 @@ div, dl, dt, dd, h4, h5, h6, pre, code, form, fieldset, legend, input, button, t
     margin-bottom: 20px;
     text-align: left;
   };
-  
 
-  
-  /* .footer-left{
-    background-color: rgb(81, 223, 145);
-    width: 30%;
-    height: 350px!important;
-  };
-  
-  .footer-right{
-    background-color: rgb(21, 20, 20);
-    width: 70%;
-    height: 350px;
-  } */
