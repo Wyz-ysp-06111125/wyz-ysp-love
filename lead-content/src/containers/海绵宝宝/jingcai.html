@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>WL恋爱日记</title>
+  <link type="text/css" rel="stylesheet" href="style.css" />
+  <style>
+    .content video {
+      width: 100%;
+      height: 600px;
+      display: block;
+      margin-top: 15px;
+      object-fit: cover;
+    }
+    .content h2{
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapin">
+    <!--头部-->
+    <header>
+      <ul class="nav">
+        <li><a  onclick="five()">首页</a></li>
+        <li><a onclick="one()">剧情简介</a></li>
+        <li><a onclick="two()">主人公介绍</a></li>
+        <li><a onclick="there()">图片鉴赏</a></li>
+        <li><a onclick="four()">精彩片段</a></li>
+      </ul>
+    </header>
+
+    <!--内容-->
+    <div class="content">
+      <div class="video">
+        <div class="title">
+          <h2>精彩视频</h2>
+        </div>
+        <video src="视频.mp4" class="hm_vdo" loop autoplay controls muted width="100%"></video>
+      </div>
+
+    </div>
+    <!--底部-->
+    <footer>
+      <p>海绵宝宝</p>
+    </footer>
+  </div>
+  <script>
+    function one(){
+      window.location.href="./juqing.html"
+    }
+    function two(){
+      window.location.href="./juese.html"
+    }
+    function there(){
+      window.location.href="./tupian.html"
+    }
+    function four(){
+      window.location.href="./jingcai.html"
+    }
+    function five(){
+      window.location.href="./index.html"
+    }
+  </script>
+</body>
+
+</html>
