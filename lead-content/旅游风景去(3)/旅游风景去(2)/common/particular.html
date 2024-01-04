@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>影视院</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/index.css">
+</head>
+
+<body>
+  <header>
+    <div class="xtx-shortcut">
+      <nav class="container">
+        <img src="../image/R-C.jpg" style="width: 51px; height: 51px;margin-top: 1px;border-radius:25px">
+        <ul class="fr">
+          <li><a href="#">我的订单</a>|</li>
+          <li><a href="#">会员中心</a>|</li>
+          <li><a href="#">帮助中心</a>|</li>
+          <li><a href="./index.html" >去登录</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="xtx-main-nav container">
+      <nav class="fl">
+        <ul class="navbar">
+          <li><a href="../index.html">景区</a></li>
+          <li><a href="#">环境</a></li>
+          <li><a href="./detail.html">留言板</a></li>
+          <li><a href="#">风景</a></li>
+          <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">二级内容</a>
+            <div class="dropdown-content">
+              <a href="#item1">地点</a>
+              <a href="#item2">音乐</a>
+              <a href="#item3">生活</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">纪录</a>
+            <div class="dropdown-content">
+              <a href="#item1">去过的风景区</a>
+              <a href="#item2">拍过的视频相册</a>
+              <a href="#item3">玩过的项目</a>
+            </div>
+          </li>
+          <li><a href="#">音乐</a></li>
+          <li><a href="#">直播</a></li>
+          <li><a href="#">生活</a></li>
+        </ul>
+      </nav>
+
+      <button class="reset-button" onclick="resetMedia()">重置视频</button>
+      <button class="reset-button" onclick="resetmusic()">重置音频</button>
+      <div class="search fl">
+        <div>
+
+        </div>
+      </div>
+
+
+
+    </div>
+
+  </header>
+
+  <div class="xtx-entry">
+
+    <div class="container">
+      <ul class="banner">
+
+        <li style="height: 500px; overflow: hidden;">
+          <div class="video-container">
+
+            <video id="myVideo" width="100%" height="100%" controls>
+              <source src="../image/ac.mp4" type="video/mp4">
+              您的浏览器不支持视频标签。
+            </video>
+          </div>
+        </li>
+        <li>
+          <audio width="100px" height="100px" id="myAudio" controls>
+            <source src="../image/你要我怎样.mp3" type="audio/mp3">
+            您的浏览器不支持音频。
+          </audio>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+
+  <div class="xtx-new-goods container" style="margin-top: 30px;">
+    <div class="goods-hd">
+      <h2 class="fl">
+        作品介绍
+      </h2>
+      <a href="#" class="fr">查看全部</a>
+    </div>
+    <ul class="goods-list">
+      <li>
+        <img style="max-height: 300px;" src="../image/qw.jpg" alt="">
+      </li>
+      <br />
+      <h1>《石花洞风景名胜区》 </h1>
+
+      <p style="color: #000;font-size: 15px; margin-top: 80px;">
+        位于北京市房山区河北镇南车营村，距京城55公里，为七层溶洞，上下高差150米，
+        是国内发现的岩溶洞穴中集规模大、洞层多、沉积类型全、次生化学沉积物数量大的洞穴，
+        其美学价值和科研价值居世界洞穴前列，与闻名中外的桂林芦笛岩、福建玉华洞、杭州瑶琳洞并称中国四大岩溶洞穴，国家4A级景区，门票70元。      </p>
+    </ul>
+    <ul class="goods-list">
+      <li>
+        <img style="max-height: 300px;" src="../image/cd.jpg" alt="">
+      </li>
+      <br />
+      <h1>《承德避暑山庄外八庙风景名胜区》</h1>
+      <p style="color: #000;font-size: 15px; margin-top: 80px;">
+        河北承德避暑山庄东北部八座藏传佛教寺庙的总称，山庄景点有“36洞天，72福地”之说
+        ，在这里可以瞻仰西藏布达拉宫的气势，浏览日喀则扎什伦布寺的雄奇，领略山西五台山殊像寺的风采
+        ，欣睹新疆伊犁固尔扎庙的身影，还可以看到世界最大的木制佛像千手千眼观世音菩萨，是汉、蒙、藏文化交融的典范。
+        坝上围场因“木兰秋狝”而得名，秋季最适合游玩，彩色丰富，层次分明，摄影绝佳，建议游玩时间3小时，门票100元，是世界文化遗产。      </p>
+    </ul>
+
+
+  </div>
+
+  <footer>
+    <div class="xtx-copyright">
+      <div class="container">
+        <p>
+          <a href="#">关于我们</a> |
+          <a href="#">帮助中心</a> |
+          <a href="#">售后服务</a>
+        </p>
+        <p>景区网站</p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+
+</html>

@@ -1,0 +1,34 @@
+.body-content{
+   background-color: rgb(244, 240, 240);
+   width: 100%;
+   padding: 45px 60px;
+   box-sizing: border-box;
+   text-align: center;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   .title1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .title{
+        width: 9%;
+        margin: 15px 15px;
+        padding: 0px;
+       }
+       .line{
+        width: 40%;
+        height: 1px;
+        background-color: #aeaaaa;
+       }
+   };
+
+   .table table{
+     margin-top: 30px;
+     width: 86%;
+     border: 1px solid #c7c4c4;
+     .body tr td{
+        font-size: 12px;
+     }
+   }
+}
