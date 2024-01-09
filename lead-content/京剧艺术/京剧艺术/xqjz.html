@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>戏曲剧种</title>
+		<link rel="stylesheet" href="css/jjys.css">
+	</head>
+	<body>
+		<div id="header">
+			<div id="headerNr">
+				<img src="img/wz.jpg"/>
+			<form id="searchForm">
+				<input type="text" id="searchText"><input type="button" id="searchBtn" value="搜索">
+			</form>
+			</div>
+		</div>
+		<div id="nav">
+			<div id="navNr">
+				<ul>
+					<a href="xqsy.html"><li class="bt1">戏曲首页</li></a>
+					<a href="fzlc.html"><li class="bt1">发展历程</li></a>
+					<a href="xqhd.html"><li class="bt1">戏曲行当</li></a>
+					<a href="xqlp.html"><li class="bt1">戏曲脸谱</li></a>
+					<a href="xqjz.html"><li class="bt2">戏曲剧种</li></a>
+				</ul>
+			</div>
+		</div>
+		<div id="picB">
+			<img src="img/5/5.1.png"/>
+		</div>
+		<div class="bg">
+			<div class="nr">
+				<div class="bt">
+					<h1><戏曲剧种></h1>
+				</div>
+				<div id="xqjznr">
+					<p>中国戏曲种类繁多，据不完全统计，中国各地区戏曲剧种约有360种。</p>
+					<p>中国五大戏曲剧种：</p>
+					<p><span>中国五大戏曲剧种一般均表述依次为京剧（具有“国剧”之称），越剧（有“中国第二大剧种”、“第二国剧”之称），黄梅戏，评剧，豫剧。</span></p>
+					<p>全国声腔剧种：</p>
+					<p><span>二黄二人台，上党二黄，上党梆子，山东梆子，川剧，三角戏，义务腔，戈阳腔，广东汉剧，云南壮剧，单剧，木偶剧，北昆，北京曲剧，北路梆子，皮黄，皮影戏等。</span></p>
+				</div>
+				<div id="picjs">
+					<img id="wzbg" src="img/5/5.bg.png"/>
+				</div>
+				<div id="Pic">
+					<div id="picb">
+						<img id="Img" src="img/5/5.1.jpg"/>
+					</div>
+					<div id="box">
+						<img class="sImg" src="img/5/5.1.jpg"/>
+						<img class="sImg" src="img/5/5.2.jpg"/>
+						<img class="sImg" src="img/5/5.3.jpg"/>
+						<img class="sImg" src="img/5/5.4.jpg"/>
+						<img class="sImg" src="img/5/5.5.jpg"/>
+					</div>
+					<script type="text/javascript">
+						var Img=document.getElementById('Img');
+						var sImg=document.getElementsByClassName('sImg');
+						for(var i=0;i<5;i++){
+							sImg[i].index=i+1;
+							sImg[i].onmouseover=function(){
+								this.src="img/5/5.1."+this.index+".png"
+							}
+							sImg[i].onmouseout=function(){
+								this.src="img/5/5."+this.index+".jpg"
+							}
+							sImg[i].onclick=function(){
+								Img.src="img/5/5."+this.index+".jpg"
+							}
+						}
+					</script>
+				</div>
+			</div>
+		</div>
+		<div id="yw">
+			<p>中国戏曲 版权所有</p>
+		</div>
+	</body>
+</html>
