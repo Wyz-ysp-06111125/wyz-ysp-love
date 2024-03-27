@@ -4,6 +4,7 @@ import List from '../list';
 import ListData from './component/content';
 import HanDan from './component/hebei/handan';
 import Ningbo from './component/ningbo';
+import App from './component/look';
 import ReactBeacutiful from './component/react-bueatful-dnd';
 const sub = [
     {
@@ -38,7 +39,7 @@ const sub = [
             code: "动态表格",
             content: "风华美貌，宁波之乡",
             data: <Ningbo></Ningbo>
-        }],
+        },],
     },
 
     {
@@ -59,6 +60,12 @@ const sub = [
             content: "构建一个可以拖拽的范围。",
             code: "react-beautiful-dnd",
             data: <ReactBeacutiful></ReactBeacutiful>
+        },{
+            index: 3,
+            key: 'look',
+            code: "轮播图",
+            content: "使用antd中轮播图内容",
+            data: <App></App>
         }]
     },
     {
