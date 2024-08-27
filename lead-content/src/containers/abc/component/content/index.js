@@ -26,14 +26,14 @@ function ListData() {
         }, {
             title: "操作",
             dataIndex: "a",
-            render: (text,corde) => (
+            render: (text, corde) => (
                 <div>
                     {/* eslint-disable-next-line  */}
                     <a href="javascript:;" rel="noreferrer noopener" style={{ marginRight: 10 }} >编辑</a>
                     {/* eslint-disable-next-line  */}
                     <a href="javascript:;" rel="noreferrer noopener" style={{ marginRight: 10 }}>查看</a>
-                      {/* eslint-disable-next-line  */}
-                    <a href="javascript:;" rel="noreferrer noopener" onClick={()=>{onDetele(corde)}}>删除</a>
+                    {/* eslint-disable-next-line  */}
+                    <a href="javascript:;" rel="noreferrer noopener" onClick={() => { onDetele(corde) }}>删除</a>
                 </div>
             )
         }])
@@ -41,61 +41,61 @@ function ListData() {
     const [twoSelect, setTwoSelect] = useState([])
     const [select] = useState(sub)
     const [data, setData] = useState([])
-    const [createDataType,setcreateDataType] = useState('')
+    const [createDataType, setcreateDataType] = useState('')
     //新增展示框
-    const [visiable,setVisiable] = useState(false)
+    const [visiable, setVisiable] = useState(false)
     // const [visiable] = useState('')
     useEffect(() => {
         const alldata = []
-      const aData= window.sessionStorage.getItem('data');
+        const aData = window.sessionStorage.getItem('data');
         const createData = JSON.parse(aData)
-       debugger
-       if(createDataType==="add"){
-        createData.forEach((val, index) => {
-            val?.children?.forEach((item, itemIndex) => {
-                alldata.push({
-                    city: val?.city,
-                    code: item?.code||itemIndex,
-                    key: `${val?.index||0}${itemIndex}`,
-                    content: val?.content,
-                    twocontent: item?.content
+        console.log(aData,'1322')
+        if (createDataType === "add") {
+            createData.forEach((val, index) => {
+                val?.children?.forEach((item, itemIndex) => {
+                    alldata.push({
+                        city: val?.city,
+                        code: item?.code || itemIndex,
+                        key: `${val?.index || 0}${itemIndex}`,
+                        content: val?.content,
+                        twocontent: item?.content
+                    })
                 })
             })
-        })
-        localStorage.removeItem("data");
-        localStorage.removeItem("type");
-       }else{
-        sub.forEach((val, index) => {
-            val?.children?.forEach((item, itemIndex) => {
-                alldata.push({
-                    city: val?.city,
-                    code: item?.code||itemIndex,
-                    key: `${val?.index}${itemIndex}`,
-                    content: val?.content,
-                    twocontent: item?.content
+            localStorage.removeItem("data");
+            localStorage.removeItem("type");
+        } else {
+            sub.forEach((val, index) => {
+                val?.children?.forEach((item, itemIndex) => {
+                    alldata.push({
+                        city: val?.city,
+                        code: item?.code || itemIndex,
+                        key: `${val?.index}${itemIndex}`,
+                        content: val?.content,
+                        twocontent: item?.content
+                    })
                 })
             })
-        })
-       }
-        
+        }
+
 
         setData(alldata)
-    }, [createDataType,visiable])
+    }, [createDataType, visiable])
     // console.log(alldata)
-    // debugger
+    // 
     const configData = (valData, dataValue, one) => {
         console.log(valData)
-        debugger
+
         if (dataValue === 'one') {
             const all = []
             valData.forEach((val, index) => {
                 val.children.forEach((item, itemIndex) => {
                     all.push({
                         city: val?.city,
-                    code: item?.code||itemIndex,
-                    key: `${val?.index||0}${itemIndex}`,
-                    content: val?.content,
-                    twocontent: item?.content
+                        code: item?.code || itemIndex,
+                        key: `${val?.index || 0}${itemIndex}`,
+                        content: val?.content,
+                        twocontent: item?.content
                     })
                 })
             })
@@ -110,8 +110,8 @@ function ListData() {
                         if (String(item.key) === String(valData)) {
                             all.push({
                                 city: val?.city,
-                                code: item?.code||itemIndex,
-                                key: `${val?.index||0}${itemIndex}`,
+                                code: item?.code || itemIndex,
+                                key: `${val?.index || 0}${itemIndex}`,
                                 content: val?.content,
                                 twocontent: item?.content
                             })
@@ -124,7 +124,7 @@ function ListData() {
 
     }
     const onFinish = (values) => {
-        debugger
+
         if (values.two && values.one) {
             const dataSelect = configData(values.two, 'two', values.one)
             setData(dataSelect)
@@ -133,7 +133,7 @@ function ListData() {
 
                 return String(val.index) === String(values.one)
             })
-            debugger
+
             const dataSelect = configData(selectDa, 'one')
             setData(dataSelect)
         } else {
@@ -142,8 +142,8 @@ function ListData() {
                 val.children.forEach((item, itemIndex) => {
                     alldata.push({
                         city: val?.city,
-                        code: item?.code||itemIndex,
-                        key: `${val?.index||0}${itemIndex}`,
+                        code: item?.code || itemIndex,
+                        key: `${val?.index || 0}${itemIndex}`,
                         content: val?.content,
                         twocontent: item?.content
                     })
@@ -187,7 +187,7 @@ function ListData() {
             console.log(5);
         })();
 
-        
+
         function parseUrl(url) {
             let urlObj = new URL(url);
             const search = urlObj.search.substring(1)
@@ -227,13 +227,13 @@ function ListData() {
         console.log("4", parseUrl(url4));
     })
     //关闭
-    const onCloseSet=()=>{
+    const onCloseSet = () => {
         setVisiable(false)
         setcreateDataType(window.sessionStorage.getItem('type'))
     }
-   const  onDetele = (values)=>{
-    debugger
-   }
+    const onDetele = (values) => {
+
+    }
     return (
         <div>
             <div>
@@ -264,7 +264,7 @@ function ListData() {
 
                 <Button style={{ marginTop: 20 }} type='primary' onClick={() => { onQcreat() }} >新增菜单</Button>
                 <Table style={{ marginTop: 30 }} columns={columns} dataSource={data} />
-                {visiable && <Create data={select} visiable = {visiable} onClose={onCloseSet} ></Create>}
+                {visiable && <Create data={select} visiable={visiable} onClose={onCloseSet} ></Create>}
             </div>
 
         </div>

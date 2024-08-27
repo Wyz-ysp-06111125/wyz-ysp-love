@@ -5,6 +5,7 @@ import ListData from './component/content';
 import HanDan from './component/hebei/handan';
 import Ningbo from './component/ningbo';
 import App from './component/look';
+import AnyData from './component/AnyData';
 import ReactBeacutiful from './component/react-bueatful-dnd';
 const sub = [
     {
@@ -60,7 +61,7 @@ const sub = [
             content: "构建一个可以拖拽的范围。",
             code: "react-beautiful-dnd",
             data: <ReactBeacutiful></ReactBeacutiful>
-        },{
+        }, {
             index: 3,
             key: 'look',
             code: "轮播图",
@@ -69,7 +70,7 @@ const sub = [
         }]
     },
     {
-        city: "河南",
+        city: "表格",
         index: 3,
         key: 4,
         content: "河南省属于中国的华中地区",
@@ -78,8 +79,8 @@ const sub = [
             index: 1,
             key: 'anyang',
             content: "安阳之乡，容貌风光",
-            code: "安阳",
-            data: null
+            code: "动态表格内容",
+            data: <AnyData></AnyData>
         }]
     },
 

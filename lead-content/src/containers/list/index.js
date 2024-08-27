@@ -55,7 +55,7 @@ class List extends React.Component {
 
             {/* <Form layout="inline"> */}
             <Form.Item
-              label="Name" name="data" rules={[{ required: true, message: "请填写名字！" }]}>
+              label="Name"   name="data" rules={[{ required: true, message: "请填写名字！" }]}>
               <Input style={{ width: 180 }} />
             </Form.Item>
             <Form.Item

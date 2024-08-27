@@ -1,98 +1,134 @@
-import { Button, Form, Input } from "antd";
-import React, { useState } from "react";
-import {
-    PlusOutlined, MinusOutlined
-} from '@ant-design/icons';
-import './index.less'
-function Ningbo() {
-    const [data, setData] = useState(
-        [{
-            name: undefined,
-            phone: undefined,
-            city: undefined,
-            time: undefined
-        }]
-    )
-    const onFinish = (values) => {
-        console.log(values)
-    }
+import React from 'react';
+import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
+import { Button, Form, Input } from 'antd';
+const formItemLayout = {
+  labelCol: {
+    xs: {
+      span: 24,
+    },
+    sm: {
+      span: 4,
+    },
+  },
+  wrapperCol: {
+    xs: {
+      span: 24,
+    },
+    sm: {
+      span: 20,
+    },
+  },
+};
+const formItemLayoutWithOutLabel = {
+  wrapperCol: {
+    xs: {
+      span: 24,
+      offset: 0,
+    },
+    sm: {
+      span: 20,
+      offset: 4,
+    },
+  },
+};
+const App = () => {
+  const onFinish = (values) => {
+    console.log('Received values of form:', values);
+  };
+  return (
+    <Form
+      name="dynamic_form_item"
+      {...formItemLayoutWithOutLabel}
+      onFinish={onFinish}
+      style={{
+        maxWidth: 600,
+      }}
+    >
+      <Form.List
+        name="names"
+        rules={[
+          {
+            validator: async (_, names) => {
+              if (!names || names.length < 2) {
+                return Promise.reject(new Error('At least 2 passengers'));
+              }
+            },
+          },
+        ]}
+      >
+        {(fields, { add, remove }, { errors }) => (
+          <>
+            {fields.map((field, index) => (
+              <Form.Item
+                {...(index === 0 ? formItemLayout : formItemLayoutWithOutLabel)}
+                label={index === 0 ? 'Passengers' : ''}
+                required={false}
+                key={field.key}
+              >
 
-    const add = () => {
-        const alldata = [...data]
-        alldata.push({
-            name: undefined,
-            phone: undefined,
-            city: undefined,
-            time: undefined
-        })
-        setData(alldata)
-    }
-    const remove = (index) => {
-        const alldata = [...data]
-        alldata.splice(index, 1)
-        setData(alldata)
-    }
-    return (
-        <div className="ningbo">
-            <h2>
-                动态表格内容
-            </h2>
-            <Form onFinish={onFinish} >
-                <table className="table-all">
-                    <thead className="table-con">
-                        <tr>
-                            <th>姓名</th>
-                            <th>手机号</th>
-                            <th>城市</th>
-                            <th>时间</th>
-                            <th>操作</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                        {
-                            data?.map((val, index) => (
-                                <tr>
-                                    <td>
-                                        <Form.Item name={['data', 'name']}>
-                                            <Input style={{ width: 180 }} />
-                                        </Form.Item>
-                                    </td>
-                                    <td>
-                                        <Form.Item name={['data', 'phone']}>
-                                            <Input style={{ width: 180 }} />
-                                        </Form.Item>
-                                    </td>
-                                    <td>
-                                        <Form.Item name={['data', 'city']}>
-                                            <Input style={{ width: 180 }} />
-                                        </Form.Item>
-                                    </td>
-                                    <td>
-                                        <Form.Item name={['data', 'time']}>
-                                            <Input style={{ width: 180 }} />
-                                        </Form.Item>
-                                    </td>
-                                    <td>
-                                        <PlusOutlined style={{ marginRight: 5, border: '1px red solid' }} onClick={() => { add() }}></PlusOutlined>
-                                        <MinusOutlined style={{ marginRight: 5, border: '1px red solid' }} onClick={() => { remove(index) }}></MinusOutlined>
-                                    </td>
-                                </tr>
-                            ))
-                        }
-                    </tbody>
-                </table>
-                <div>
-
-                    <Button type="primary" htmlType="submit">提交</Button>
-                </div>
-            </Form>
-            <p style={{ color: "red" }}>
-                动态页面中得内容  利用hooks编译而成 动态表格添加或者删除得时候我们要去获取到data
-                使用扩展运算符[...data] 获取 否则js当中用变量接收是只获取了长度
-            </p>
-        </div>
-    )
-
-}
-export default Ningbo
+                
+                <Form.Item
+                  {...field}
+                  validateTrigger={['onChange', 'onBlur']}
+                  rules={[
+                    {
+                      required: true,
+                      whitespace: true,
+                      message: "Please input passenger's name or delete this field.",
+                    },
+                  ]}
+                  noStyle
+                >
+                  <Input
+                    placeholder="passenger name"
+                    style={{
+                      width: '60%',
+                    }}
+                  />
+                </Form.Item>
+                {fields.length > 1 ? (
+                  <MinusCircleOutlined
+                    className="dynamic-delete-button"
+                    onClick={() => remove(field.name)}
+                  />
+                ) : null}
+              </Form.Item>
+            ))}
+            <Form.Item>
+              <Button
+                type="dashed"
+                onClick={() => add()}
+                style={{
+                  width: '60%',
+                }}
+                icon={<PlusOutlined />}
+              >
+                Add field
+              </Button>
+              <Button
+                type="dashed"
+                onClick={() => {
+                  add('The head item', 0);
+                }}
+                style={{
+                  width: '60%',
+                  marginTop: '20px',
+                }}
+                icon={<PlusOutlined />}
+              >
+                Add field at head
+              </Button>
+              <Form.ErrorList errors={errors} />
+            </Form.Item>
+          </>
+        )}
+      </Form.List>
+      <Form.Item>
+        <Button type="primary" htmlType="submit">
+          Submit
+        </Button>
+      </Form.Item>
+    </Form>
+  );
+};
+export default App;
