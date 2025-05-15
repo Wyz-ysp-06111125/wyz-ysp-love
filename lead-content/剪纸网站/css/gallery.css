@@ -1,0 +1,80 @@
+.gallery-filters {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.filter-btn {
+    display: inline-block;
+    padding: 8px 20px;
+    margin: 0 5px;
+    border: 2px solid #e74c3c;
+    border-radius: 25px;
+    color: #e74c3c;
+    background: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: #e74c3c;
+    color: white;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.gallery-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s;
+}
+
+.gallery-item:hover .gallery-info {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.gallery-info h3 {
+    margin: 0 0 5px;
+    font-size: 18px;
+}
+
+.gallery-info p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.load-more {
+    text-align: center;
+    margin: 40px 0;
+}

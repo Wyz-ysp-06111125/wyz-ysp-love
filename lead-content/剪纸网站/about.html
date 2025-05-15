@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我们 - 中国剪纸艺术</title>
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="css/style.css"> 
+    <link rel="stylesheet" href="css/about.css"> 
+   
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">剪纸艺术</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="gallery.html">作品展示</a></li>
+                <li><a href="tutorial.html">剪纸教程</a></li>
+                <li><a href="about.html" class="active">关于我们</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main style="margin-top: 90px;">
+        <!-- 添加数据管理部分 -->
+        <div class="data-management-section">
+            <div class="container">
+                <h2 class="section-title">数据管理</h2>
+                <div class="data-operations">
+                    <form id="dataForm" class="data-form">
+                        <input type="text" id="itemName" placeholder="名称" required>
+                        <input type="text" id="itemDescription" placeholder="描述" required>
+                        <input type="text" id="itemCategory" placeholder="类别" required>
+                        <button type="submit" class="btn btn-add">添加数据</button>
+                    </form>
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="搜索...">
+                    </div>
+                </div>
+                <div class="data-table-container">
+                    <table id="dataTable" class="data-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>名称</th>
+                                <th>描述</th>
+                                <th>类别</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- 数据将通过 JavaScript 动态加载 -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="about-section">
+            <div class="about-content">
+                <h1 class="section-title">关于我们</h1>
+                <p>我们致力于传承和发展中国传统剪纸艺术，通过现代创新手法，让这门古老的艺术在新时代焕发新的生机。</p>
+                
+                <div class="history-timeline">
+                    <div class="timeline-line"></div>
+                    <!-- 时间线内容将通过JavaScript动态加载 -->
+                </div>
+            </div>
+        </div>
+
+        <div class="team-section">
+            <div class="container">
+                <h2 class="section-title">我们的团队</h2>
+                <div class="team-grid">
+                    <!-- 团队成员信息将通过JavaScript动态加载 -->
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-section">
+            <div class="container">
+                <h2 class="section-title">联系我们</h2>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <h3>电话</h3>
+                        <p>123-456-7890</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <h3>邮箱</h3>
+                        <p>info@papercut.art</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>地址</h3>
+                        <p>中国北京市朝阳区艺术大街100号</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>联系我们</h3>
+                    <p>电话：123-456-7890</p>
+                    <p>邮箱：info@papercut.art</p>
+                </div>
+                <div class="footer-section">
+                    <h3>关注我们</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link">微信</a>
+                        <a href="#" class="social-link">微博</a>
+                        <a href="#" class="social-link">抖音</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 中国剪纸艺术. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/about.js"></script>
+</body>
+</html>

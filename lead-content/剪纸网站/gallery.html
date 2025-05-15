@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作品展示 - 中国剪纸艺术</title>
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/gallery.css">
+   
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">剪纸艺术</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="gallery.html" class="active">作品展示</a></li>
+                <li><a href="tutorial.html">剪纸教程</a></li>
+                <li><a href="about.html">关于我们</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main style="margin-top: 90px;">
+        <div class="container">
+            <h1 class="section-title">作品展示</h1>
+            
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">全部</button>
+                <button class="filter-btn" data-filter="traditional">传统剪纸</button>
+                <button class="filter-btn" data-filter="modern">现代剪纸</button>
+                <button class="filter-btn" data-filter="festival">节日剪纸</button>
+            </div>
+
+            <div class="gallery-grid">
+                <!-- 作品将通过JavaScript动态加载 -->
+            </div>
+
+            <div class="load-more">
+                <button class="btn" id="loadMoreBtn">加载更多</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>联系我们</h3>
+                    <p>电话：123-456-7890</p>
+                    <p>邮箱：info@papercut.art</p>
+                </div>
+                <div class="footer-section">
+                    <h3>关注我们</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link">微信</a>
+                        <a href="#" class="social-link">微博</a>
+                        <a href="#" class="social-link">抖音</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 中国剪纸艺术. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <script src="js/gallery.js"></script>
+</body>
+</html>

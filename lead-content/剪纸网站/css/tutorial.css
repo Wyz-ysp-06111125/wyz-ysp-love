@@ -1,0 +1,155 @@
+.tutorial-container {
+    padding: 40px 0;
+}
+
+.tutorial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.tutorial-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.tutorial-card:hover {
+    transform: translateY(-5px);
+}
+
+.tutorial-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.tutorial-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tutorial-content {
+    padding: 20px;
+}
+
+.tutorial-content h3 {
+    margin: 0 0 10px;
+    color: #2c3e50;
+}
+
+.tutorial-content p {
+    margin: 0 0 15px;
+    color: #666;
+}
+
+.difficulty {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.beginner { background: #a8e6cf; color: #2d6a4f; }
+.intermediate { background: #ffd3b6; color: #9c4221; }
+.advanced { background: #ffaaa5; color: #942c2c; }
+
+.tutorial-steps {
+    margin-top: 40px;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.step-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.step-item {
+    display: flex;
+    margin-bottom: 30px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s;
+}
+
+.step-number {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    background: #e74c3c;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+.step-content {
+    flex-grow: 1;
+}
+
+.step-content h4 {
+    margin: 0 0 10px;
+    color: #2c3e50;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    margin: 20px 0;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+}
+
+.tips-section {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.tips-toggle {
+    cursor: pointer;
+    color: #e74c3c;
+    display: inline-flex;
+    align-items: center;
+}
+
+.tips-content {
+    display: none;
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .tutorial-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .step-item {
+        flex-direction: column;
+    }
+
+    .step-number {
+        margin-bottom: 10px;
+    }
+}
